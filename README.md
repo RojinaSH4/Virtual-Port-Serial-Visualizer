@@ -60,7 +60,8 @@ I created this project to master asynchronous programming (Multi-threading) and 
 ### ​Live Chart in Action: 
 <img width="651" height="421" alt="Screenshot (190)" src="https://github.com/user-attachments/assets/c9130061-190c-4737-9701-4e7130eaadfb" />
 
----​
+---
+​
 ## How to Run
 1. ​Virtual Ports: You need a virtual serial port pair (like COM5 & COM6) created via tools like vspd or com0com.
 2. ​Open the solution file in Visual Studio.
