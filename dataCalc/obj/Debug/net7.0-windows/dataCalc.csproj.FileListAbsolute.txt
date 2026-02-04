@@ -1,0 +1,12 @@
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\bin\Debug\net7.0-windows\dataCalc.deps.json
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\bin\Debug\net7.0-windows\dataCalc.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\bin\Debug\net7.0-windows\dataCalc.pdb
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.csproj.AssemblyReference.cache
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.AssemblyInfoInputs.cache
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.AssemblyInfo.cs
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.csproj.CoreCompileInputs.cache
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\refint\dataCalc.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\dataCalc.pdb
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataCalc\obj\Debug\net7.0-windows\ref\dataCalc.dll

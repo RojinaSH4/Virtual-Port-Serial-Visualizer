@@ -1,0 +1,15 @@
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.csproj.AssemblyReference.cache
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.AssemblyInfoInputs.cache
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.AssemblyInfo.cs
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.csproj.CoreCompileInputs.cache
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\bin\Debug\net7.0-windows\dataPort.deps.json
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\bin\Debug\net7.0-windows\dataPort.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\bin\Debug\net7.0-windows\dataPort.pdb
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\bin\Debug\net7.0-windows\dataCalc.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\bin\Debug\net7.0-windows\dataCalc.pdb
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.csproj.CopyComplete
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\refint\dataPort.dll
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\dataPort.pdb
+C:\Users\arsha\Desktop\C# Samples\VPSG\dataPort\obj\Debug\net7.0-windows\ref\dataPort.dll
