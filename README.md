@@ -1,6 +1,6 @@
 # ​Virtual Port Serial Visualizer (WinForms)
 
-##​About the Project
+## ​About the Project
 ​This is a real-time data visualization application developed using C# and Windows Forms.
 I created this project to master asynchronous programming (Multi-threading) and to practice advanced project layering, specifically how to manage continuous data streams between an infrastructure layer (Serial Port) and a presentation layer (Dynamic Charting).
 
