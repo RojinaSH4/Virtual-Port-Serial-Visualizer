@@ -1,85 +1,144 @@
-# EEG Band Separation & Brainwave Visualizer
+## ​About the Project
 
-## About the Project
-This is an end-to-end embedded and desktop visualization system built to simulate real-time biomedical signal processing. 
-I created this project to bridge hardware signal conditioning with desktop software, practice multi-layer system architecture, and gain hands-on experience in processing multi-channel analog signals, microcontroller firmware development, and real-time serial telemetry in C#.
+​This is a real-time data visualization application developed using C# and Windows Forms.
 
-The system processes incoming signal sources, filters them into distinct EEG frequency bands via Op-Amp circuits, determines the dominant brain state using an ATmega32 microcontroller, and streams live telemetry to a C# WinForms application for real-time visualization.
+I created this project to master asynchronous programming (Multi-threading) and to practice advanced project layering, specifically how to manage continuous data streams between an infrastructure layer (Serial Port) and a presentation layer (Dynamic Charting).
 
----
 
-## Features
-- **Analog Signal Conditioning:** Active Op-Amp filtering circuits designed to isolate key EEG frequency bands (Delta, Theta, Alpha, Beta).
-- **Microcontroller Signal Processing:** Real-time ADC sampling, dynamic power ratio calculation, and threshold-based brain state classification (`Deep Sleep`, `Drowsy`, `Relaxed`, `Focused`).
-- **Hardware Telemetry Display:** On-board 16x2 character LCD updating live system status and band percentages.
-- **Serial Telemetry Integration:** Formatted UART data transmission at 9600 Baud to external software interfaces.
-- **Real-Time Data Visualization:** C# WinForms UI displaying live percentage column charts and dynamic brain state status indicators.
-- **Thread-Safe UI Operations:** Robust async thread-marshaling using `BeginInvoke` and Regex-based stream parsing for dynamic updates.
+
+​The application simulates a real-world scenario where data is generated in a domain layer, transmitted via a serial interface, and visualized dynamically.
+
+
 
 ---
 
-## Architecture & Structure
-The project is structured into three clear domains to separate hardware design, embedded firmware, and desktop presentation layers:
 
-- **hardware (Schematic & PCB Layer)**  
-  Contains the Proteus simulation files, circuit schematics, and PCB/3D layouts. It models the signal sources and the active operational amplifier filtering stages that isolate the EEG frequency bands.
 
-- **firmware (Embedded Layer)**  
-  Contains the CodeVisionAVR C code for the ATmega32 microcontroller. It handles analog-to-digital conversion (ADC), calculates power percentages, manages local LCD output, and streams raw telemetry tokens over UART.
+## ​Features
 
-- **software (Presentation Layer)**  
-  A C# .NET WinForms application that connects to the serial port (via real or virtual COM ports). It parses incoming data streams with Regular Expressions and updates the visualization chart safely without blocking the main UI thread.
+- ​Real-time Data Streaming: Continuous data flow using high-performance threading.
 
----
+- ​Dynamic Charting: Live line chart with an auto-scrolling window.
 
-## Concepts Used
-- **Biomedical Signal Processing:** Active bandpass filtering and EEG frequency isolation (Delta, Theta, Alpha, Beta).
-- **Embedded C Development:** ATmega32 ADC configuration, UART communication, and LCD interfacing using CodeVisionAVR.
-- **Hardware Simulation & PCB Design:** Circuit modeling, schematic capture, and 3D PCB design in Proteus.
-- **Asynchronous UI Updating:** Thread-safe operations with `BeginInvoke` in WinForms.
-- **Serial Communication Protocol:** Telemetry parsing with Regex over virtual/physical COM ports.
+ - ​Smart Port Management: * Dynamic discovery of available COM ports.
 
----
+ - ​Real-time input validation to prevent port conflicts (identical Receiver/Sender selection).
 
-## What I Learned
-Through this project, I significantly improved my understanding of:
-- Translating biomedical signal conditioning concepts into physical schematic and PCB layouts.
-- Developing embedded firmware to bridge analog inputs with digital serial streams.
-- Interfacing hardware simulators (Proteus) with desktop applications using virtual serial port bridges (`com0com`).
-- Decoupling hardware data acquisition from software presentation layers in a multi-disciplinary workflow.
+- ​Automated UI locking during active communication for stability.
+
+- ​Thread-Safe Buffering: Uses synchronization primitives (lock) to manage shared data safely between threads.
+
+- ​Graceful Termination: Uses CancellationTokenSource for clean background task shutdowns.
+
+
 
 ---
 
-## Screenshots
 
-### Hardware Schematic
-<img width="1000" alt="Hardware Schematic" src="docs/Shematic_Brain%20Wave%20Band%20Seperation.jpg" />
 
-### 3D PCB View
-<img width="1000" alt="3D PCB View" src="docs/3D_Brain%20Wave%20Band%20Seperation.png" />
+## ​Architecture & Structure
 
-### PCB Layout
-<img width="1000" alt="PCB Layout" src="docs/PCB_Brain%20Wave%20Band%20Seperation.png" />
+​The project is organized into three distinct domains (namespaces) to maintain a professional separation of concerns:
 
-### Main Dashboard (WinForms GUI)
-<img width="800" alt="Main Dashboard GUI" src="docs/gui.PNG" />
+
+
+- **​dataCalc (Domain Layer)**
+
+  Contains the core business logic and data generation. It encapsulates how data is modeled and produced, representing the "Business Rules" of the application.
+
+
+
+- **​dataPort (Infrastructure Layer)**
+
+  Handles the low-level serial communication. It manages the SerialPort lifecycle, background threads for reading/writing, and thread-safe data buffering. This layer references the dataCalc domain.
+
+
+
+- **​VPSG (Presentation Layer)**
+
+  The main WinForms UI that orchestrates the application. It handles user interactions, performs input validation, and consumes data from the Infrastructure layer to render the chart. This layer references both dataPort and dataCalc.
+
+
 
 ---
+
+
+
+## ​Concepts Used
+
+- ​Asynchronous Programming: Task.Run, async/await, and CancellationToken.
+
+- ​Multi-threading: Thread management and Invoke for thread-safe UI updates.
+
+- ​Defensive Programming: Real-time input validation and UI state management (Locking controls).
+
+- ​Architectural Layering: Separation of Domain, Infrastructure, and UI.
+
+- ​Concurrency Control: Thread-safe collections and lock objects.
+
+
+
+---
+
+
+
+## ​What I Learned
+
+​Through this project, I significantly improved my understanding of:
+
+- ​Managing Producer-Consumer patterns in a multi-threaded environment.
+
+- ​Synchronizing background data streams with UI thread components (Charting).
+
+- ​Handling hardware-related exceptions (Serial Port access) through preemptive UI logic.
+
+- ​Structuring a project so that the UI is completely decoupled from the data generation logic.
+
+
+
+---
+
+
+
+## ​Screenshots
+
+
+
+
+
+### ​Main Dashboard: 
+
+<img width="655" height="437" alt="Screenshot (188)" src="https://github.com/user-attachments/assets/37b85d6b-0160-4563-871b-30eeb146e1ee" />
+
+
+
+### ​Live Chart in Action: 
+
+<img width="651" height="421" alt="Screenshot (190)" src="https://github.com/user-attachments/assets/c9130061-190c-4737-9701-4e7130eaadfb" />
+
+
+
+---
+
+​
 
 ## How to Run
-1. **Virtual Ports Setup:** Configure `com0com` to pair two virtual serial ports (e.g., `COM1` $\leftrightarrow$ `COM2`).
-2. **Hardware Simulation:**
-   - Compile the firmware in **CodeVisionAVR** to generate the `.hex` or `.cof` output file.
-   - Open `hardware/Brain Wave Band Seperation.pdsprj` in Proteus.
-   - Double-click the **ATmega32** microcontroller, click on **Program File**, and select the generated `.hex` (or `.cof`) file from the `firmware/` folder.
-   - Double-click the **COMPIM** component and configure it to `COM1` at `9600 Baud`.
-   - Run the simulation.
-3. **Desktop Application:**  
-   - Open `software/EEG Simulator.sln` in Visual Studio.  
-   - Build and run the project.  
-   - Select `COM2` from the dropdown menu and click **Connect Serial Port**.
+
+1. ​Virtual Ports: You need a virtual serial port pair (like COM5 & COM6) created via tools like vspd or com0com.
+
+2. ​Open the solution file in Visual Studio.
+
+3. ​Build and Run the application.
+
+4. ​Select your virtual pair from the dropdowns and click START.
+
+
 
 ---
 
+
+
 ## Notes
-This project was created for learning purposes and to showcase my skills in embedded systems, biomedical signal conditioning, and C# desktop application development.
+
+This project was created for learning purposes and to showcase my C#. 
+
