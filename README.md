@@ -68,9 +68,11 @@ Through this project, I significantly improved my understanding of:
 
 ## How to Run
 1. **Virtual Ports Setup:** Configure `com0com` to pair two virtual serial ports (e.g., `COM1` $\leftrightarrow$ `COM2`).
-2. **Hardware Simulation:**  
-   - Open `hardware/Brain Wave Band Seperation.pdsprj` in Proteus.  
-   - Configure the `COMPIM` component to `COM1` at `9600 Baud`.  
+2. ** Hardware Simulation:**
+   - Compile the firmware in **CodeVisionAVR** to generate the `.hex` or `.cof` output file.
+   - Open `hardware/Brain Wave Band Seperation.pdsprj` in Proteus.
+   - Double-click the **ATmega32** microcontroller, click on **Program File**, and select the generated `.hex` (or `.cof`) file from the `firmware/` folder.
+4. Double-click the **COMPIM** component and configure it to `COM1` at `9600 Baud`.
    - Run the simulation.
 3. **Desktop Application:**  
    - Open `software/EEG Simulator.sln` in Visual Studio.  
